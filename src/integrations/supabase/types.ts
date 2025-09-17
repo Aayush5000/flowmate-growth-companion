@@ -14,7 +14,123 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      badges: {
+        Row: {
+          badge_name: string
+          badge_type: string
+          earned_at: string | null
+          id: string
+          threshold: number
+          user_id: string
+        }
+        Insert: {
+          badge_name: string
+          badge_type: string
+          earned_at?: string | null
+          id?: string
+          threshold: number
+          user_id: string
+        }
+        Update: {
+          badge_name?: string
+          badge_type?: string
+          earned_at?: string | null
+          id?: string
+          threshold?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      habits: {
+        Row: {
+          created_at: string | null
+          description: string | null
+          id: string
+          last_checked: string | null
+          name: string
+          streak: number | null
+          user_id: string
+          xp_reward: number | null
+        }
+        Insert: {
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          last_checked?: string | null
+          name: string
+          streak?: number | null
+          user_id: string
+          xp_reward?: number | null
+        }
+        Update: {
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          last_checked?: string | null
+          name?: string
+          streak?: number | null
+          user_id?: string
+          xp_reward?: number | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string | null
+          id: string
+          updated_at: string | null
+          username: string | null
+          xp: number | null
+        }
+        Insert: {
+          created_at?: string | null
+          id: string
+          updated_at?: string | null
+          username?: string | null
+          xp?: number | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          updated_at?: string | null
+          username?: string | null
+          xp?: number | null
+        }
+        Relationships: []
+      }
+      tasks: {
+        Row: {
+          completed: boolean | null
+          completed_at: string | null
+          created_at: string | null
+          description: string | null
+          id: string
+          title: string
+          user_id: string
+          xp_reward: number | null
+        }
+        Insert: {
+          completed?: boolean | null
+          completed_at?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          title: string
+          user_id: string
+          xp_reward?: number | null
+        }
+        Update: {
+          completed?: boolean | null
+          completed_at?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          title?: string
+          user_id?: string
+          xp_reward?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
